@@ -1,0 +1,17 @@
+[
+    {
+      "orderId": 5001,
+      "userId": 1,
+      "productIds": [101, 102],
+      "totalPrice": 49.98,
+      "status": "shipped"
+    },
+    {
+      "orderId": 5002,
+      "userId": 2,
+      "productIds": [101],
+      "totalPrice": 19.99,
+      "status": "processing"
+    }
+  ]
+  

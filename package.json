@@ -1,0 +1,17 @@
+{
+  "name": "nodejs-intro",
+  "version": "1.0.0",
+  "description": "A template for NodeJS-servers with API endpoints. Use it to learn and understand API-endpoints and API methods. ",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "run": "node app.js",
+    "//": "THE ABOVE LIVE ENABLES RUNNIONG THE SERVER WITH 'npm run app'"
+  },
+  "author": "Axel Ingo",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "fs": "^0.0.1-security"
+  }
+}
