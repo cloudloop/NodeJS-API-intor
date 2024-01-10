@@ -17,12 +17,34 @@ const app = express();
 // -----------------------------------------------------------------------------------------------------------------------
 // GET endpoint
 app.get('/get', (req, res) => {
-    // Handle GET request
+    // Handle GET request and 
     res.send('GET request received. You can now test /users');
+    console.log(`GET request, /get`);
 });
 
 // -----------------------------------------------------------------------------------------------------------------------
-// RETURNING SOMETHING MORE INTERESTING IN THE GET ENDPOINT
+// [BOILERPLATE DEFAULT] Server setup. This is usually at the bottom of the file. 
+// -----------------------------------------------------------------------------------------------------------------------
+// This way of defining the URL and port will default to environment variable, but falls back to port 3000 if no environment variables can be found. 
+// The URL needs to be defined by you. The port however is either set by Environment variable in your .env-file (locally), 
+// automatically set (if GCP App Engine deployed) or manually set in config (if GCP Cloud Run deployed). 
+const URL = process.env.URL || 'http://localhost'
+const PORT = process.env.PORT || 3000;
+// Then, server is started!
+app.listen(PORT, () => {
+    console.log(`Server running on ${URL}:${PORT}`);
+});
+
+
+
+
+
+
+
+
+
+// -----------------------------------------------------------------------------------------------------------------------
+// RETURNING SOMETHING MORE INTERESTING THAN THE /GET ENDPOINT
 // -----------------------------------------------------------------------------------------------------------------------
 // A simple function to read the files in /data.
 async function readJsonFile(filePath) {
@@ -46,18 +68,14 @@ app.get('/users', async (req, res) => {
     }
   });
 
-// -----------------------------------------------------------------------------------------------------------------------
-// [BOILERPLATE DEFAULT] Server setup. 
-// -----------------------------------------------------------------------------------------------------------------------
-// This way of defining the URL and port will default to environment variable, but falls back to port 3000 if no environment variables can be found. 
-// The URL needs to be defined by you. The port however is either set by Environment variable in your .env-file (locally), 
-// automatically set (if GCP App Engine deployed) or manually set in config (if GCP Cloud Run deployed). 
-const URL = process.env.URL || 'http://localhost'
-const PORT = process.env.PORT || 3000;
-// Then, server is started!
-app.listen(PORT, () => {
-    console.log(`Server running on ${URL}:${PORT}`);
-});
+
+
+
+
+
+
+
+
 
 
 // -----------------------------------------------------------------------------------------------------------------------
@@ -84,6 +102,15 @@ app.get('/prettyusers', async (req, res) => {
 // Thus, app.set sets some configurations globally. 
 // See all default options at https://expressjs.com/en/api.html#app.set
  
+
+
+
+
+
+
+
+
+
 
 // -----------------------------------------------------------------------------------------------------------------------
 // BUT WHAT IF YOU WANT A DYNAMIC GET ENDPOINT, AND ONLY USER 1 FROM THE ABOVE?!
@@ -122,6 +149,16 @@ app.get('/api/users/:id', async (req, res) => {
         res.status(500).send('Error reading users data');
     }
 });
+
+
+
+
+
+
+
+
+
+
 
 
 // -----------------------------------------------------------------------------------------------------------------------
@@ -197,6 +234,7 @@ fetch('/users', {
 // -----------------------------------------------------------------------------------------------------------------------
 
 
+
 // -----------------------------------------------------------------------------------------------------------------------
 // Some GPT templates could help you get started below... 
 // -----------------------------------------------------------------------------------------------------------------------
@@ -229,6 +267,14 @@ app.post('/api/postExample', (req, res) => {
     const data = req.body;
     res.send(`POST request received with data: ${JSON.stringify(data)}`);
 });
+
+
+
+
+
+
+
+
 
 
 
