@@ -1,5 +1,8 @@
+// IMPORTANT - DONT FORGET TO RUN npm install TO INSTALL DEPENDENCIES, E.G. THE BELOW MODULES. 
+
 // -----------------------------------------------------------------------------------------------------------------------
 // DEFAULT SETUP
+// -----------------------------------------------------------------------------------------------------------------------
 
 // Import required modules. In our case, express is used to facilitate server and api endpoints, 
 // while fs reads/writes files. The '.promises' allows for async/await functions with fs. 
